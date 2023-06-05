@@ -3,6 +3,7 @@ from fastapi.encoders import jsonable_encoder
 from json import JSONDecodeError
 from fastapi.responses import HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
+import uvicorn
 from chat import get_response
 
 # FastAPI App Instance
@@ -11,19 +12,19 @@ app = FastAPI(
                 description='Construcción de API para Chatbot',
                 version = '1.0.0'
               )
-origins = [
-    "http://localhost.tiangolo.com",
+
+""" "http://localhost.tiangolo.com",
     "https://localhost.tiangolo.com",
     "http://localhost",
-    "http://localhost:8000",
-]
+    "http://localhost:8000", """
+""" origins = ["*"]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
-)
+) """
 
 # Index: Pagina de inicio
 @app.get("/", response_class=HTMLResponse)
@@ -58,4 +59,4 @@ async def predict(request : Request):
 
 
 if __name__ == "__main__":
-    uvicorn.run()
+    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)

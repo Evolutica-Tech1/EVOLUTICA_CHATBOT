@@ -1,13 +1,15 @@
-FROM python
+FROM tiangolo/uvicorn-gunicorn:python3.11
 
 WORKDIR /chatbot-api
 
 COPY requirements.txt .
 
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 COPY . .
 
-CMD gunicorn --bind 0.0.0.0:8000 app:app
+CMD uvicorn app:app --host 0.0.0.0 --port 8000
+
+# CMD ["uvicorn", "app:app" , "--host", "0.0.0.0", "--port", "8000"]
 
 # CMD [ "python", "./app.py" ]

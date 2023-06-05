@@ -1,5 +1,5 @@
 import openai
-from config import API_KEY
+from config.config import API_KEY
 openai.api_key = API_KEY
 conversation = ""
 i = 1

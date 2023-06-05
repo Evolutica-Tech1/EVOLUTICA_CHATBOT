@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
 from chat import get_response
+#from waitress import serve
 
 # conda install flask-cors para habilitar los cors y poder interactuar en forma separada con el frontend
 
@@ -30,3 +31,4 @@ def predict():
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
+    #serve(app, host="0.0.0.0", port=8080, debug=True)

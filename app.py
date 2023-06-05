@@ -17,14 +17,14 @@ app = FastAPI(
     "https://localhost.tiangolo.com",
     "http://localhost",
     "http://localhost:8000", """
-""" origins = ["*"]
+origins = ["*"]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"],
-) """
+    allow_headers=["*"]
+)
 
 # Index: Pagina de inicio
 @app.get("/", response_class=HTMLResponse)

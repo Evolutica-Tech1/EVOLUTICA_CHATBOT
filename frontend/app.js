@@ -48,8 +48,8 @@ class Chatbox {
 
         // 'http://127.0.0.1:8000/predict'
         // $SCRIPT_ROOT + '/predict'
-        // 'chatbot-evolutica-production.up.railway.app/predict'
-        fetch('https://chatbot-evolutica-production.up.railway.app/predict', {
+        // 'https://chatbot-evolutica-production.up.railway.app/predict'
+        fetch('http://localhost:8000/predict', {
             method: 'POST',
             body: JSON.stringify({ message: text1 }),
             mode: 'cors',

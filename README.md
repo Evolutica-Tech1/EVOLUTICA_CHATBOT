@@ -1,8 +1,8 @@
-# EVOLUTICA_CHATBOT
+# EVOLUTICA CHATBOT
 
 ## Docker Container
 
-To deploy flask application run the following docker commands
+To deploy fastapi application run the following docker commands
 
 ```bash
 # Build the container
@@ -17,6 +17,14 @@ docker ls -ll
 # Stop container
 docker stop evolutica-chatbot
 ```
+
+This file is used to deploy the application in a cloud service
+
+## Deploy in a cloud service
+
+Dockerfile is used to deploy the entire application in web server to make the chatbot available to be consumed. Most of the hosting services allow to create a service like Railway, it recognizes Dockerfile and build up the application.
+
+> While Building up the app its necessary to set up the environment variable `OPENAI_API_KEY`
 
 ## OpenAI Fine-Tunes
 
